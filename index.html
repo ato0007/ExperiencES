@@ -134,20 +134,90 @@
     .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
     .hero-panel {
-      padding: 22px;
+      overflow: hidden;
       color: var(--ink);
-      background: rgba(255,255,255,0.82);
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(255,255,255,0.62);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(14px);
     }
-    .hero-panel img {
-      width: 165px;
-      margin-bottom: 14px;
-      mix-blend-mode: multiply;
-      isolation: isolate;
+    .hero-panel-top {
+      min-height: 148px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 18px;
+      color: var(--white);
+      background:
+        linear-gradient(180deg, rgba(17,32,51,0.08), rgba(17,32,51,0.78)),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/Ilamatepec%20Lake%20wide.jpg?width=900") center/cover;
     }
-    .hero-panel h2 { margin-bottom: 12px; color: var(--ink); font-size: 1.28rem; line-height: 1.16; }
+    .hero-panel-top span {
+      align-self: flex-start;
+      padding: 6px 9px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: var(--radius);
+      font-size: 0.72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .hero-panel-top strong {
+      display: block;
+      margin-top: 42px;
+      font-size: 1.28rem;
+      line-height: 1.12;
+    }
+    .hero-panel-body { padding: 18px; }
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .quick-stat {
+      min-height: 76px;
+      padding: 10px;
+      background: #f4f7f9;
+      border-radius: var(--radius);
+    }
+    .quick-stat strong {
+      display: block;
+      color: var(--blue);
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+    .quick-stat span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.18;
+    }
+    .hero-panel-body p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+    .mini-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .mini-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 900;
+      text-align: center;
+    }
+    .mini-link.primary { color: var(--white); background: var(--blue); }
+    .mini-link.secondary { color: var(--ink); background: var(--white); border: 1px solid var(--line); }
     .check-list { display: grid; gap: 10px; list-style: none; }
     .check-list li { position: relative; padding-left: 24px; color: var(--muted); }
     .check-list li::before {
@@ -493,14 +563,22 @@
         </div>
 
         <aside class="hero-panel">
-          <img src="ChatGPT Image 18 may 2026, 17_29_12 (1).png" alt="ExperiencES Descubre Vive Conecta" />
-          <h2>Elige tu ruta según lo que quieres vivir.</h2>
-          <ul class="check-list">
-            <li>Destinos recomendados para tu primera visita.</li>
-            <li>Rutas de un día desde San Salvador.</li>
-            <li>Precios, horarios e incluidos visibles.</li>
-            <li>Reserva directa por WhatsApp con atención personalizada.</li>
-          </ul>
+          <div class="hero-panel-top">
+            <span>Plan privado</span>
+            <strong>Tu día en El Salvador, armado a tu ritmo.</strong>
+          </div>
+          <div class="hero-panel-body">
+            <div class="quick-grid">
+              <div class="quick-stat"><strong>1 día</strong><span>Rutas desde San Salvador</span></div>
+              <div class="quick-stat"><strong>ES/EN</strong><span>Guías bilingües</span></div>
+              <div class="quick-stat"><strong>Pick up</strong><span>En tu alojamiento</span></div>
+            </div>
+            <p>Cuéntanos si buscas volcán, playa, pueblos, historia o gastronomía y te recomendamos la mejor ruta según tu tiempo.</p>
+            <div class="mini-actions">
+              <a class="mini-link primary" href="https://wa.me/50370207434" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="mini-link secondary" href="#guia">Explorar guía</a>
+            </div>
+          </div>
         </aside>
       </div>
     </section>
