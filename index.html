@@ -54,7 +54,7 @@
       color: var(--ink);
       font-weight: 900;
     }
-    .brand img { width: 52px; height: 52px; object-fit: contain; }
+    .brand img { width: 46px; height: 46px; object-fit: contain; }
     .brand span { color: var(--blue); }
 
     .nav {
@@ -85,18 +85,18 @@
       min-height: calc(100vh - 77px);
       display: grid;
       align-items: end;
-      padding: clamp(58px, 8vw, 92px) clamp(18px, 5vw, 78px) 36px;
+      padding: clamp(52px, 7vw, 82px) clamp(18px, 5vw, 78px) 44px;
       color: var(--white);
       background:
-        linear-gradient(90deg, rgba(10, 20, 35, 0.86), rgba(10, 20, 35, 0.28)),
+        linear-gradient(90deg, rgba(10, 20, 35, 0.9), rgba(10, 20, 35, 0.42) 52%, rgba(10, 20, 35, 0.16)),
         url("https://commons.wikimedia.org/wiki/Special:FilePath/LakeCoatepequeElSalvador.jpg?width=1800") center/cover;
     }
 
     .hero-inner {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 360px;
-      gap: clamp(28px, 5vw, 70px);
-      align-items: end;
+      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 380px);
+      gap: clamp(28px, 5vw, 82px);
+      align-items: center;
       width: 100%;
     }
 
@@ -119,9 +119,9 @@
     }
 
     h1 {
-      max-width: 860px;
-      font-size: clamp(2.6rem, 8vw, 6.6rem);
-      line-height: 0.93;
+      max-width: 780px;
+      font-size: clamp(2.9rem, 6.4vw, 6rem);
+      line-height: 0.96;
       letter-spacing: 0;
     }
     .hero-copy {
@@ -134,42 +134,62 @@
     .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
     .hero-panel {
-      overflow: hidden;
+      padding: 18px;
       color: var(--ink);
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.88);
       border: 1px solid rgba(255,255,255,0.62);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       backdrop-filter: blur(14px);
     }
-    .hero-panel-top {
-      min-height: 148px;
+    .hero-panel-brand {
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 18px;
-      color: var(--white);
-      background:
-        linear-gradient(180deg, rgba(17,32,51,0.08), rgba(17,32,51,0.78)),
-        url("https://commons.wikimedia.org/wiki/Special:FilePath/Ilamatepec%20Lake%20wide.jpg?width=900") center/cover;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
     }
-    .hero-panel-top span {
-      align-self: flex-start;
-      padding: 6px 9px;
-      background: rgba(255,255,255,0.16);
-      border: 1px solid rgba(255,255,255,0.22);
-      border-radius: var(--radius);
-      font-size: 0.72rem;
+    .hero-panel-brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      background: var(--white);
+      border-radius: 50%;
+    }
+    .hero-panel-brand span {
+      display: block;
+      color: var(--blue);
+      font-size: 0.74rem;
       font-weight: 900;
       text-transform: uppercase;
     }
-    .hero-panel-top strong {
+    .hero-panel-brand strong {
       display: block;
-      margin-top: 42px;
-      font-size: 1.28rem;
+      margin-top: 3px;
+      color: var(--ink);
+      font-size: 1.12rem;
+      line-height: 1.14;
+    }
+    .hero-panel-highlight {
+      display: grid;
+      gap: 10px;
+      margin: 16px 0;
+      padding: 16px;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(17,32,51,0.82), rgba(17,32,51,0.34)),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/Ilamatepec%20Lake%20wide.jpg?width=900") center/cover;
+      border-radius: var(--radius);
+    }
+    .hero-panel-highlight strong {
+      font-size: 1.18rem;
       line-height: 1.12;
     }
-    .hero-panel-body { padding: 18px; }
+    .hero-panel-highlight span {
+      color: rgba(255,255,255,0.86);
+      font-size: 0.92rem;
+    }
+    .hero-panel-body { padding: 0; }
     .quick-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -563,9 +583,16 @@
         </div>
 
         <aside class="hero-panel">
-          <div class="hero-panel-top">
-            <span>Plan privado</span>
-            <strong>Tu día en El Salvador, armado a tu ritmo.</strong>
+          <div class="hero-panel-brand">
+            <img src="ChatGPT Image 18 may 2026, 17_29_12 (1).png" alt="ExperiencES Descubre Vive Conecta" />
+            <div>
+              <span>Plan privado</span>
+              <strong>Tu ruta, guiada por locales.</strong>
+            </div>
+          </div>
+          <div class="hero-panel-highlight">
+            <strong>Elige volcán, playa, pueblos, historia o gastronomía.</strong>
+            <span>Te recomendamos la mejor experiencia según tu tiempo y estilo de viaje.</span>
           </div>
           <div class="hero-panel-body">
             <div class="quick-grid">
@@ -573,7 +600,6 @@
               <div class="quick-stat"><strong>ES/EN</strong><span>Guías bilingües</span></div>
               <div class="quick-stat"><strong>Pick up</strong><span>En tu alojamiento</span></div>
             </div>
-            <p>Cuéntanos si buscas volcán, playa, pueblos, historia o gastronomía y te recomendamos la mejor ruta según tu tiempo.</p>
             <div class="mini-actions">
               <a class="mini-link primary" href="https://wa.me/50370207434" target="_blank" rel="noopener">WhatsApp</a>
               <a class="mini-link secondary" href="#guia">Explorar guía</a>
@@ -824,7 +850,7 @@
     <section class="gallery" aria-labelledby="galeria-title">
       <div class="section-head">
         <p class="section-kicker">Propuesta de galería</p>
-        <h2 id="galeria-title">Fotos que muestran destino, no flyers recortados.</h2>
+        <h2 id="galeria-title">Fotos reales que invitan a conocer el destino.</h2>
         <p>La galería mezcla paisajes, ciudad, playa y cultura para reforzar la percepción de variedad del país.</p>
       </div>
       <div class="gallery-grid">
