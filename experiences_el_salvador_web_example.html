@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiences El Salvador | Tours privados</title>
+  <style>
+    :root {
+      --green: #6f8f2f;
+      --green-dark: #30451f;
+      --sand: #f4efe3;
+      --white: #ffffff;
+      --orange: #e87b32;
+      --text: #26311f;
+      --muted: #65705c;
+      --card: #ffffff;
+      --shadow: 0 20px 45px rgba(38, 49, 31, 0.12);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--sand);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 7vw;
+      background: rgba(244, 239, 227, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(48, 69, 31, 0.08);
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--green-dark);
+    }
+
+    .brand span {
+      color: var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+      padding: 80px 7vw;
+      background:
+        linear-gradient(rgba(48, 69, 31, 0.50), rgba(48, 69, 31, 0.35)),
+        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80') center/cover;
+      color: var(--white);
+    }
+
+    .hero-content {
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5.8rem);
+      line-height: 0.95;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 580px;
+      font-size: 1.18rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+      box-shadow: 0 12px 30px rgba(232, 123, 50, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.18);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--text);
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 16px;
+      color: var(--green-dark);
+      font-size: 1.35rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-card li::before {
+      content: '✓';
+      color: var(--orange);
+      font-weight: 800;
+      margin-right: 8px;
+    }
+
+    section {
+      padding: 80px 7vw;
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 38px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      color: var(--green-dark);
+      margin-bottom: 14px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .experience-types {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .type-card, .tour-card, .info-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .type-card {
+      padding: 30px;
+      border-top: 6px solid var(--green);
+    }
+
+    .type-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+      color: var(--green-dark);
+    }
+
+    .type-card ul, .info-card ul {
+      margin-top: 16px;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .tours-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .tour-image {
+      height: 270px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .tour-content {
+      padding: 28px;
+    }
+
+    .tour-content .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(111, 143, 47, 0.12);
+      color: var(--green-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .tour-content h3 {
+      font-size: 1.55rem;
+      margin-bottom: 10px;
+      color: var(--green-dark);
+    }
+
+    .tour-content p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .tour-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(48, 69, 31, 0.12);
+      font-size: 0.92rem;
+    }
+
+    .tour-details h4 {
+      margin-bottom: 8px;
+      color: var(--green-dark);
+    }
+
+    .tour-details ul {
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .highlight {
+      background: var(--green-dark);
+      color: var(--white);
+    }
+
+    .highlight .section-head h2,
+    .highlight .section-head p {
+      color: var(--white);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+    }
+
+    .info-card {
+      padding: 32px;
+    }
+
+    .info-card h3 {
+      margin-bottom: 12px;
+      color: var(--green-dark);
+    }
+
+    .cta {
+      text-align: center;
+      background:
+        linear-gradient(rgba(48, 69, 31, 0.65), rgba(48, 69, 31, 0.65)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover;
+      color: var(--white);
+      border-radius: 36px;
+      margin: 40px 7vw 80px;
+      padding: 70px 28px;
+    }
+
+    .cta h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      max-width: 620px;
+      margin: 0 auto 26px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    footer {
+      padding: 32px 7vw;
+      background: var(--green-dark);
+      color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .experience-types,
+      .tours-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .tour-details {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a href="#" class="brand">Experienc<span>ES</span></a>
+    <nav class="nav-links">
+      <a href="#experiencias">Experiencias</a>
+      <a href="#tours">Tours</a>
+      <a href="#incluye">Qué incluye</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">Tours privados en El Salvador</span>
+        <h1>Discover El Salvador your way.</h1>
+        <p>
+          Experiencias privadas diseñadas para explorar volcanes, lagos, playas, pueblos,
+          historia y cultura con comodidad, seguridad y guías bilingües.
+        </p>
+        <div class="buttons">
+          <a href="#tours" class="btn btn-primary">Ver experiencias</a>
+          <a href="#contacto" class="btn btn-secondary">Reservar por WhatsApp</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3>Qué incluyen nuestras experiencias</h3>
+        <ul>
+          <li>Experiencias privadas</li>
+          <li>Recogida y retorno al hotel</li>
+          <li>Vehículos cómodos con A/C</li>
+          <li>Guías turísticos en inglés y español</li>
+          <li>Opciones premium con alimentación y alojamiento</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="experiencias">
+      <div class="section-head">
+        <h2>Tipos de experiencias</h2>
+        <p>
+          Ofrecemos opciones flexibles para distintos estilos de viaje: recorridos de día completo,
+          experiencias cortas o nocturnas y paquetes premium para una estadía más completa.
+        </p>
+      </div>
+
+      <div class="experience-types">
+        <article class="type-card">
+          <h3>Día completo</h3>
+          <p>Ideal para descubrir destinos naturales, históricos y culturales durante toda la jornada.</p>
+          <ul>
+            <li>Traslados privados</li>
+            <li>Experiencia guiada</li>
+            <li>Alimentación según el tour</li>
+          </ul>
+        </article>
+
+        <article class="type-card">
+          <h3>Medio día o nocturno</h3>
+          <p>Perfecto para quienes desean vivir una experiencia más breve, cómoda y memorable.</p>
+          <ul>
+            <li>Traslados</li>
+            <li>Experiencia guiada</li>
+            <li>Opciones personalizadas</li>
+          </ul>
+        </article>
+
+        <article class="type-card">
+          <h3>Premium</h3>
+          <p>Una opción más exclusiva para viajeros que buscan acompañamiento completo.</p>
+          <ul>
+            <li>Traslados aeropuerto-hotel</li>
+            <li>Experiencias privadas</li>
+            <li>Alimentación y alojamiento</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="tours">
+      <div class="section-head">
+        <h2>Zona Oriente Full Day Experiences</h2>
+        <p>
+          Rutas seleccionadas para descubrir el oriente de El Salvador: naturaleza, volcanes,
+          historia, café, playas e islas con acompañamiento privado.
+        </p>
+      </div>
+
+      <div class="tours-grid">
+        <article class="tour-card">
+          <div class="tour-image" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80')"></div>
+          <div class="tour-content">
+            <span class="tag">Naturaleza · Café · Cultura</span>
+            <h3>Alegría, Laguna de Alegría y Berlín</h3>
+            <p>
+              Una experiencia entre montañas, volcanes y café. Visita la ciudad de Alegría,
+              la Laguna de Alegría, miradores panorámicos, fincas cafeteras y el centro histórico de Berlín.
+            </p>
+            <div class="tour-details">
+              <div>
+                <h4>Lugares incluidos</h4>
+                <ul>
+                  <li>Laguna de Alegría</li>
+                  <li>Finca Rauda</li>
+                  <li>Mirador de Cristal</li>
+                  <li>Mirador de las 100 gradas</li>
+                  <li>Centro histórico de Berlín</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Horario aproximado</h4>
+                <ul>
+                  <li>Salida: 7:00 a.m.</li>
+                  <li>Regreso: 7:00 p.m.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <div class="tour-image" style="background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80')"></div>
+          <div class="tour-content">
+            <span class="tag">Historia · Memoria · Naturaleza</span>
+            <h3>Ruta de la Paz</h3>
+            <p>
+              Un recorrido por Morazán para conocer Perquín, el Museo de la Revolución,
+              espacios históricos, El Mozote y Río Sapo, combinando memoria histórica y naturaleza.
+            </p>
+            <div class="tour-details">
+              <div>
+                <h4>Lugares incluidos</h4>
+                <ul>
+                  <li>Perquín</li>
+                  <li>Museo de la Revolución</li>
+                  <li>Cerro Perquín</li>
+                  <li>El Mozote</li>
+                  <li>Río Sapo</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Horario aproximado</h4>
+                <ul>
+                  <li>Salida: 5:00 a.m.</li>
+                  <li>Regreso: 7:00 p.m.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <div class="tour-image" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80')"></div>
+          <div class="tour-content">
+            <span class="tag">Mar · Islas · Paisajes</span>
+            <h3>Islas del Golfo de Fonseca</h3>
+            <p>
+              Una experiencia marítima desde el Puerto de La Unión para navegar entre islas,
+              playas y paisajes del Golfo de Fonseca, con vistas hacia El Salvador, Honduras y Nicaragua.
+            </p>
+            <div class="tour-details">
+              <div>
+                <h4>Lugares incluidos</h4>
+                <ul>
+                  <li>Puerto de La Unión</li>
+                  <li>Isla Zacatillo</li>
+                  <li>Playa Playona</li>
+                  <li>Isla Conejo</li>
+                  <li>Isla Chuchito</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Horario aproximado</h4>
+                <ul>
+                  <li>Salida: 5:30 a.m.</li>
+                  <li>Regreso: 7:30 p.m.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <div class="tour-image" style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80')"></div>
+          <div class="tour-content">
+            <span class="tag">Aventura · Volcán · Mirador</span>
+            <h3>Volcán de Conchagua y Mirador Espíritu de la Montaña</h3>
+            <p>
+              Una experiencia de aventura hacia el Volcán de Conchagua, con ascenso en 4x4
+              y vistas panorámicas del Golfo de Fonseca desde el Mirador Espíritu de la Montaña.
+            </p>
+            <div class="tour-details">
+              <div>
+                <h4>Incluye</h4>
+                <ul>
+                  <li>Transporte con A/C</li>
+                  <li>Vehículo 4x4</li>
+                  <li>Entrada al mirador</li>
+                  <li>Guía bilingüe certificado</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Horario aproximado</h4>
+                <ul>
+                  <li>Salida: 5:00 a.m.</li>
+                  <li>Regreso: 8:00 p.m.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="incluye" class="highlight">
+      <div class="section-head">
+        <h2>Información general</h2>
+        <p>
+          Cada experiencia puede personalizarse según el destino, horario, clima y necesidades del cliente.
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <article class="info-card">
+          <h3>Incluido en nuestras experiencias</h3>
+          <ul>
+            <li>Recogida y regreso al hotel</li>
+            <li>Transporte cómodo con aire acondicionado</li>
+            <li>Guías turísticos bilingües</li>
+            <li>Paradas en puntos de interés</li>
+            <li>Entradas según cada experiencia</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>Política de cancelación</h3>
+          <p>
+            Cancelaciones sin costo hasta 72 horas antes de la actividad. Con más de 48 horas
+            de anticipación se realiza reembolso del 50%. No se realizan reembolsos por
+            cancelaciones tardías, llegadas tarde o inasistencia.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="cta">
+      <h2>Ready for your next experience?</h2>
+      <p>
+        Cuéntanos qué tipo de viaje quieres vivir y diseñamos una experiencia privada para ti,
+        tu familia o tu grupo.
+      </p>
+      <a href="https://wa.me/50300000000" class="btn btn-primary">Contactar por WhatsApp</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Experiences El Salvador</p>
+    <p>Private tours · English & Spanish guides · El Salvador</p>
+  </footer>
+</body>
+</html>
