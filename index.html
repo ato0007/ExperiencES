@@ -3,34 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ExperiencES ofrece tours privados y experiencias turísticas en El Salvador: volcanes, playas, historia, cultura, pueblos, lagos y aventura." />
+  <meta name="description" content="ExperiencES ofrece tours privados en El Salvador: volcanes, lagos, playas, historia, cultura, pueblos, gastronomía y aventura." />
   <title>ExperiencES | Tours privados en El Salvador</title>
   <style>
     :root {
-      --ink: #14223a;
-      --text: #263248;
-      --muted: #657083;
-      --green: #91b51f;
-      --green-dark: #516b16;
-      --blue: #0876bd;
-      --sky: #e8f5fb;
-      --sun: #f28b2e;
-      --paper: #fffdf6;
-      --line: rgba(20, 34, 58, 0.14);
-      --shadow: 0 20px 55px rgba(20, 34, 58, 0.13);
+      --ink: #112033;
+      --text: #2b3544;
+      --muted: #667181;
+      --line: rgba(17, 32, 51, 0.14);
+      --paper: #fbfaf5;
+      --soft: #eef6f3;
+      --blue: #086fad;
+      --green: #7fa420;
+      --sun: #e17b2d;
+      --white: #fff;
+      --shadow: 0 18px 44px rgba(17, 32, 51, 0.12);
       --radius: 8px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       min-width: 320px;
       font-family: Arial, Helvetica, sans-serif;
@@ -38,61 +30,41 @@
       background: var(--paper);
       line-height: 1.55;
     }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
 
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 50;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      padding: 12px clamp(18px, 6vw, 88px);
-      background: rgba(255, 253, 246, 0.95);
+      gap: 22px;
+      padding: 12px clamp(18px, 5vw, 78px);
+      background: rgba(251, 250, 245, 0.94);
       border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(14px);
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      min-width: 170px;
-      font-weight: 800;
+      gap: 10px;
       color: var(--ink);
+      font-weight: 900;
     }
-
-    .brand img {
-      width: 58px;
-      height: 58px;
-      object-fit: contain;
-    }
-
-    .brand span {
-      color: var(--blue);
-    }
+    .brand img { width: 52px; height: 52px; object-fit: contain; }
+    .brand span { color: var(--blue); }
 
     .nav {
       display: flex;
       align-items: center;
-      gap: 22px;
-      font-size: 0.94rem;
+      gap: 20px;
       color: var(--muted);
+      font-size: 0.93rem;
     }
-
-    .nav a:hover {
-      color: var(--blue);
-    }
+    .nav a:hover { color: var(--blue); }
 
     .btn {
       display: inline-flex;
@@ -101,441 +73,394 @@
       min-height: 46px;
       padding: 12px 18px;
       border-radius: var(--radius);
-      font-weight: 800;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      font-weight: 850;
+      transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
     }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      color: #fff;
-      background: var(--blue);
-      box-shadow: 0 14px 32px rgba(8, 118, 189, 0.25);
-    }
-
-    .btn-primary:hover {
-      background: #065f99;
-    }
-
-    .btn-secondary {
-      color: var(--ink);
-      background: #fff;
-      border: 1px solid var(--line);
-    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: var(--white); background: var(--blue); box-shadow: 0 14px 32px rgba(8, 111, 173, 0.24); }
+    .btn-primary:hover { background: #075b8f; }
+    .btn-secondary { color: var(--ink); background: var(--white); border: 1px solid var(--line); }
 
     .hero {
+      min-height: calc(100vh - 77px);
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(330px, 0.82fr);
-      gap: clamp(28px, 4vw, 56px);
-      align-items: center;
-      min-height: calc(100vh - 83px);
-      padding: clamp(54px, 8vw, 100px) clamp(18px, 6vw, 88px);
+      align-items: end;
+      padding: clamp(58px, 8vw, 92px) clamp(18px, 5vw, 78px) 36px;
+      color: var(--white);
       background:
-        linear-gradient(90deg, rgba(10, 24, 43, 0.88), rgba(10, 24, 43, 0.52)),
-        url("Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (1).jpeg") center/cover;
-      color: #fff;
+        linear-gradient(90deg, rgba(10, 20, 35, 0.86), rgba(10, 20, 35, 0.28)),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/LakeCoatepequeElSalvador.jpg?width=1800") center/cover;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: clamp(28px, 5vw, 70px);
+      align-items: end;
+      width: 100%;
+    }
+
+    .eyebrow,
+    .section-kicker,
+    .tag {
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0;
     }
 
     .eyebrow {
       display: inline-flex;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       padding: 8px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.36);
+      border: 1px solid rgba(255,255,255,0.34);
       border-radius: var(--radius);
-      color: rgba(255, 255, 255, 0.88);
-      font-size: 0.82rem;
-      font-weight: 800;
-      text-transform: uppercase;
+      background: rgba(255,255,255,0.08);
     }
 
     h1 {
-      max-width: 780px;
-      font-size: clamp(2.6rem, 8vw, 6.8rem);
-      line-height: 0.92;
+      max-width: 860px;
+      font-size: clamp(2.6rem, 8vw, 6.6rem);
+      line-height: 0.93;
       letter-spacing: 0;
     }
-
     .hero-copy {
-      max-width: 670px;
-      margin: 24px 0 30px;
-      color: rgba(255, 255, 255, 0.86);
-      font-size: clamp(1.03rem, 1.5vw, 1.22rem);
+      max-width: 680px;
+      margin: 22px 0 28px;
+      color: rgba(255,255,255,0.88);
+      font-size: clamp(1.03rem, 1.5vw, 1.2rem);
     }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+    .hero-actions,
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
     .hero-panel {
-      padding: 24px;
-      background: rgba(255, 255, 255, 0.94);
+      padding: 22px;
       color: var(--ink);
+      background: rgba(255,255,255,0.82);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
     }
-
     .hero-panel img {
-      width: 190px;
-      margin-bottom: 16px;
+      width: 165px;
+      margin-bottom: 14px;
+      mix-blend-mode: multiply;
+      isolation: isolate;
     }
-
-    .hero-panel h2 {
-      margin-bottom: 12px;
-      font-size: 1.35rem;
-      line-height: 1.15;
-    }
-
-    .hero-panel ul,
-    .included ul {
-      display: grid;
-      gap: 10px;
-      list-style: none;
-    }
-
-    .hero-panel li,
-    .included li {
-      position: relative;
-      padding-left: 24px;
-      color: var(--muted);
-    }
-
-    .hero-panel li::before,
-    .included li::before {
+    .hero-panel h2 { margin-bottom: 12px; color: var(--ink); font-size: 1.28rem; line-height: 1.16; }
+    .check-list { display: grid; gap: 10px; list-style: none; }
+    .check-list li { position: relative; padding-left: 24px; color: var(--muted); }
+    .check-list li::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 0.7em;
+      top: 0.68em;
       width: 10px;
       height: 10px;
-      background: var(--green);
       border-radius: 50%;
+      background: var(--green);
     }
 
-    section {
-      padding: clamp(58px, 8vw, 96px) clamp(18px, 6vw, 88px);
-    }
-
-    .section-head {
-      max-width: 860px;
-      margin-bottom: 34px;
-    }
-
-    .section-kicker {
-      margin-bottom: 10px;
-      color: var(--blue);
-      font-size: 0.82rem;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
+    section { padding: clamp(58px, 8vw, 94px) clamp(18px, 5vw, 78px); }
+    .section-head { max-width: 900px; margin-bottom: 34px; }
+    .section-kicker { margin-bottom: 10px; color: var(--blue); }
     h2 {
       color: var(--ink);
-      font-size: clamp(2rem, 4.5vw, 4rem);
+      font-size: clamp(2rem, 4.6vw, 4rem);
       line-height: 1;
       letter-spacing: 0;
     }
+    .section-head p { margin-top: 14px; color: var(--muted); font-size: 1.05rem; }
 
-    .section-head p {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 1.05rem;
+    .guide-tabs,
+    .tour-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
     }
-
-    .trust-grid {
+    .tab-button {
+      min-height: 44px;
+      padding: 10px 14px;
+      color: var(--ink);
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      font: inherit;
+      font-weight: 850;
+      cursor: pointer;
+      transition: color 0.18s ease, background 0.18s ease, border 0.18s ease, transform 0.18s ease;
+    }
+    .tab-button:hover { transform: translateY(-2px); color: var(--blue); }
+    .tab-button.is-active {
+      color: var(--white);
+      background: var(--blue);
+      border-color: var(--blue);
+      box-shadow: 0 12px 26px rgba(8, 111, 173, 0.2);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.is-active {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 24px;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 22px;
+      align-items: stretch;
     }
-
-    .mission-card,
-    .reason-card,
-    .type-card,
-    .tour-card,
-    .included,
-    .contact-card {
-      background: #fff;
+    .tab-photo {
+      min-height: 420px;
+      border-radius: var(--radius);
+      background-size: cover;
+      background-position: center;
+      box-shadow: var(--shadow);
+    }
+    .tab-content {
+      display: grid;
+      gap: 16px;
+    }
+    .guide-card {
+      padding: 22px;
+      background: var(--white);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
+    .guide-card h3 { color: var(--ink); font-size: 1.24rem; line-height: 1.18; }
+    .guide-card p { margin-top: 8px; color: var(--muted); }
+    .guide-card a { display: inline-flex; margin-top: 12px; color: var(--blue); font-weight: 900; }
 
-    .mission-card {
-      padding: clamp(24px, 4vw, 38px);
-      background: linear-gradient(135deg, #fff, var(--sky));
-    }
-
-    .mission-card h3,
-    .reason-card h3,
-    .type-card h3,
-    .tour-card h3,
-    .included h3,
-    .contact-card h3 {
-      color: var(--ink);
-      font-size: 1.35rem;
-      line-height: 1.18;
-    }
-
-    .mission-card p,
-    .type-card p,
-    .tour-card p,
-    .included p,
-    .contact-card p {
-      margin-top: 12px;
-      color: var(--muted);
-    }
-
-    .reason-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .reason-card {
-      min-height: 142px;
-      padding: 20px;
-    }
-
-    .reason-card strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--green-dark);
-      font-size: 1.08rem;
-    }
-
-    .reason-card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .types {
-      background: #f3f8e9;
-    }
-
-    .type-grid {
+    .audit-grid,
+    .type-grid,
+    .details-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
-
-    .type-card {
-      padding: 26px;
-      border-top: 6px solid var(--green);
+    .audit-card,
+    .type-card,
+    .included,
+    .tour-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
+    .audit-card,
+    .type-card,
+    .included { padding: clamp(22px, 3vw, 30px); }
+    .audit-card strong,
+    .type-card h3,
+    .included h3,
+    .tour-card h3 { color: var(--ink); font-size: 1.25rem; line-height: 1.18; }
+    .audit-card p,
+    .type-card p,
+    .included p,
+    .tour-card p { margin-top: 10px; color: var(--muted); }
+    .audit-card { border-top: 5px solid var(--blue); }
+    .audit-card:nth-child(2) { border-top-color: var(--sun); }
+    .audit-card:nth-child(3) { border-top-color: var(--green); }
 
-    .type-card:nth-child(2) {
-      border-top-color: var(--blue);
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
     }
+    .story {
+      padding: clamp(24px, 4vw, 40px);
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(17,32,51,0.86), rgba(17,32,51,0.52)),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/PUERTA%20DEL%20DIABLO%2C%20EL%20SALVADOR.jpg?width=1600") center/cover;
+      border-radius: var(--radius);
+      min-height: 410px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .story h2 { color: var(--white); }
+    .story p { max-width: 660px; margin-top: 16px; color: rgba(255,255,255,0.88); }
+    .reason-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .reason-card {
+      min-height: 128px;
+      padding: 20px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .reason-card strong { color: var(--green); font-size: 1.05rem; }
+    .reason-card p { margin-top: 8px; color: var(--muted); font-size: 0.95rem; }
 
-    .type-card:nth-child(3) {
-      border-top-color: var(--sun);
-    }
+    .types { background: var(--soft); }
+    .type-card { border-top: 6px solid var(--green); }
+    .type-card:nth-child(2) { border-top-color: var(--blue); }
+    .type-card:nth-child(3) { border-top-color: var(--sun); }
 
     .tours-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
     }
-
+    .tour-card.is-hidden { display: none; }
     .tour-card {
       display: flex;
       flex-direction: column;
       overflow: hidden;
     }
-
     .tour-media {
-      height: 190px;
+      min-height: 230px;
       background-size: cover;
       background-position: center;
     }
-
     .tour-body {
       display: flex;
       flex: 1;
       flex-direction: column;
       padding: 22px;
     }
-
     .tag {
       align-self: flex-start;
       margin-bottom: 12px;
       padding: 6px 10px;
+      color: var(--blue);
+      background: rgba(8, 111, 173, 0.1);
       border-radius: var(--radius);
-      color: var(--green-dark);
-      background: rgba(145, 181, 31, 0.14);
-      font-size: 0.78rem;
-      font-weight: 800;
     }
-
+    .tour-points {
+      display: grid;
+      gap: 8px;
+      margin: 16px 0 18px;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
     .tour-meta {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
       margin-top: auto;
-      padding-top: 18px;
     }
-
     .meta-box {
       min-height: 72px;
       padding: 12px;
-      background: #f6f9fb;
+      background: #f4f7f9;
       border-radius: var(--radius);
     }
-
     .meta-box span {
       display: block;
       color: var(--muted);
-      font-size: 0.76rem;
-      font-weight: 800;
+      font-size: 0.74rem;
+      font-weight: 900;
       text-transform: uppercase;
     }
+    .meta-box strong { display: block; margin-top: 4px; color: var(--ink); font-size: 0.94rem; }
 
-    .meta-box strong {
-      display: block;
-      margin-top: 4px;
-      color: var(--ink);
-      font-size: 0.95rem;
+    .slide-proof {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.86rem;
     }
+    .slide-proof a { color: var(--blue); font-weight: 800; }
 
     .gallery {
+      color: var(--white);
       background: var(--ink);
-      color: #fff;
     }
-
     .gallery h2,
-    .gallery .section-head p {
-      color: #fff;
-    }
-
-    .photo-grid {
+    .gallery .section-head p { color: var(--white); }
+    .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      grid-auto-rows: 210px;
       gap: 12px;
     }
-
-    .photo-grid img {
-      width: 100%;
-      height: 210px;
-      object-fit: cover;
+    .gallery-tile {
+      position: relative;
+      overflow: hidden;
       border-radius: var(--radius);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+    .gallery-tile:first-child { grid-row: span 2; }
+    .gallery-tile span {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      padding: 8px 10px;
+      color: var(--white);
+      background: rgba(17,32,51,0.72);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 800;
     }
 
-    .details {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .included,
-    .contact-card {
-      padding: clamp(24px, 4vw, 34px);
-    }
-
-    .included ul {
-      margin-top: 18px;
-    }
-
+    .details-grid { grid-template-columns: 1fr 1fr; }
+    .included ul { margin-top: 16px; }
     .contact {
+      color: var(--white);
       background:
-        linear-gradient(90deg, rgba(255, 253, 246, 0.96), rgba(255, 253, 246, 0.7)),
-        url("Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (13).jpeg") center/cover;
+        linear-gradient(90deg, rgba(17,32,51,0.86), rgba(17,32,51,0.36)),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/Centro%20historico%20san%20salvador.jpg?width=1800") center/cover;
     }
-
-    .contact-card {
-      max-width: 720px;
-    }
-
-    .contact-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
-    }
+    .contact-card { max-width: 760px; }
+    .contact h2 { color: var(--white); }
+    .contact p { margin: 14px 0 24px; color: rgba(255,255,255,0.88); font-size: 1.05rem; }
 
     footer {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 18px;
-      padding: 28px clamp(18px, 6vw, 88px);
-      color: rgba(255, 255, 255, 0.78);
+      padding: 28px clamp(18px, 5vw, 78px);
+      color: rgba(255,255,255,0.78);
       background: var(--ink);
     }
-
-    footer strong {
-      color: #fff;
+    footer strong { color: var(--white); }
+    .image-credits {
+      flex-basis: 100%;
+      color: rgba(255,255,255,0.62);
+      font-size: 0.78rem;
+    }
+    .image-credits summary {
+      cursor: pointer;
+      font-weight: 800;
+    }
+    .image-credits p {
+      max-width: 980px;
+      margin-top: 8px;
+    }
+    .image-credits a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    @media (max-width: 1080px) {
-      .tours-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .photo-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+    @media (max-width: 1120px) {
+      .tours-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .audit-grid { grid-template-columns: 1fr; }
     }
-
-    @media (max-width: 820px) {
-      .site-header {
-        align-items: flex-start;
-      }
-
-      .nav {
-        display: none;
-      }
-
-      .hero,
-      .trust-grid,
+    @media (max-width: 860px) {
+      .nav { display: none; }
+      .hero { min-height: auto; }
+      .hero-inner,
+      .split,
+      .tab-panel.is-active,
       .type-grid,
-      .details {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: auto;
-      }
-
-      .hero-panel img {
-        width: 150px;
-      }
-
-      .reason-grid,
-      .tours-grid,
-      .photo-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .photo-grid img {
-        height: 240px;
-      }
+      .details-grid,
+      .tours-grid { grid-template-columns: 1fr; }
+      .tab-photo { min-height: 300px; }
+      .reason-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+      .gallery-tile:first-child { grid-row: span 1; }
     }
-
     @media (max-width: 520px) {
-      .brand {
-        min-width: 0;
-        font-size: 0.95rem;
-      }
-
-      .brand img {
-        width: 48px;
-        height: 48px;
-      }
-
+      .brand img { width: 46px; height: 46px; }
+      .brand { font-size: 0.94rem; }
       .hero-actions,
       .contact-actions,
-      .btn {
-        width: 100%;
-      }
-
-      .tour-meta {
-        grid-template-columns: 1fr;
-      }
+      .btn { width: 100%; }
+      .tour-meta { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -546,6 +471,7 @@
       <strong>Experienc<span>ES</span></strong>
     </a>
     <nav class="nav" aria-label="Navegación principal">
+      <a href="#guia">Guía de viaje</a>
       <a href="#razones">Por qué viajar</a>
       <a href="#experiencias">Experiencias</a>
       <a href="#tours">Tours</a>
@@ -555,67 +481,90 @@
 
   <main id="inicio">
     <section class="hero">
-      <div>
-        <span class="eyebrow">Tours privados en El Salvador</span>
-        <h1>Descubre, vive y conecta con El Salvador.</h1>
-        <p class="hero-copy">
-          ExperiencES diseña recorridos privados por volcanes, lagos, playas, pueblos, historia y cultura con guías bilingües, transporte cómodo y atención cercana de inicio a fin.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://wa.me/50370207434" target="_blank" rel="noopener">Reservar por WhatsApp</a>
-          <a class="btn btn-secondary" href="#tours">Ver tours destacados</a>
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow">Tours privados en El Salvador</span>
+          <h1>Descubre, vive y conecta con El Salvador.</h1>
+          <p class="hero-copy">Experiencias privadas con guías bilingües, transporte cómodo y rutas diseñadas para descubrir volcanes, lagos, playas, historia, pueblos, gastronomía y aventura con una mirada local.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/50370207434" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+            <a class="btn btn-secondary" href="#tours">Ver tours destacados</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <img src="ChatGPT Image 18 may 2026, 17_29_12 (1).png" alt="ExperiencES Descubre Vive Conecta" />
+          <h2>Elige tu ruta según lo que quieres vivir.</h2>
+          <ul class="check-list">
+            <li>Destinos recomendados para tu primera visita.</li>
+            <li>Rutas de un día desde San Salvador.</li>
+            <li>Precios, horarios e incluidos visibles.</li>
+            <li>Reserva directa por WhatsApp con atención personalizada.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="guia">
+      <div class="section-head">
+        <p class="section-kicker">Guía para descubrir El Salvador</p>
+        <h2>Explora por destinos, estilos de viaje y consejos prácticos.</h2>
+        <p>Como una guía viva de viaje: elige una pestaña, compara ideas y salta al tour que mejor encaja con tu tiempo, energía y curiosidad.</p>
+      </div>
+      <div class="guide-tabs" role="tablist" aria-label="Guía de viaje por El Salvador">
+        <button class="tab-button is-active" type="button" role="tab" aria-selected="true" aria-controls="tab-destinos" data-tab="destinos">Top destinos</button>
+        <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="tab-rutas" data-tab="rutas">Rutas de 1 día</button>
+        <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="tab-estilos" data-tab="estilos">Por estilo</button>
+        <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="tab-planifica" data-tab="planifica">Planifica tu viaje</button>
+      </div>
+      <div class="tab-panel is-active" id="tab-destinos" role="tabpanel" data-panel="destinos">
+        <div class="tab-photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/LakeCoatepequeElSalvador.jpg?width=1400')"></div>
+        <div class="tab-content">
+          <article class="guide-card"><h3>Lago de Coatepeque y Cerro Verde</h3><p>Una de las mejores primeras rutas: paisajes volcánicos, clima fresco y vistas abiertas al lago.</p><a href="#tours">Ver tours de naturaleza</a></article>
+          <article class="guide-card"><h3>Ruta de las Flores</h3><p>Pueblos coloridos, café de altura, artesanías y gastronomía local en una ruta muy fotogénica.</p><a href="#tours">Ver tours culturales</a></article>
+          <article class="guide-card"><h3>Suchitoto y Lago Suchitlán</h3><p>Calles coloniales, historia, miradores y una travesía tranquila en lancha al atardecer.</p><a href="#tours">Ver tours de pueblos</a></article>
         </div>
       </div>
-
-      <aside class="hero-panel">
-        <img src="ChatGPT Image 18 may 2026, 17_29_12 (1).png" alt="ExperiencES Descubre Vive Conecta" />
-        <h2>Aventura, emoción y descubrimiento</h2>
-        <ul>
-          <li>Recogida y retorno en alojamiento de San Salvador.</li>
-          <li>Vehículos confortables con aire acondicionado y seguro.</li>
-          <li>Guías turísticos certificados en español e inglés.</li>
-          <li>Experiencias privadas desde 2 personas y opciones compartidas.</li>
-        </ul>
-      </aside>
+      <div class="tab-panel" id="tab-rutas" role="tabpanel" data-panel="rutas">
+        <div class="tab-photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Ilamatepec%20Lake%20wide.jpg?width=1400')"></div>
+        <div class="tab-content">
+          <article class="guide-card"><h3>Si tienes medio día</h3><p>City tour, El Boquerón, Centro Histórico o una experiencia nocturna en San Salvador.</p><a href="#tours">Filtrar tours cortos</a></article>
+          <article class="guide-card"><h3>Si tienes un día completo</h3><p>Volcán Santa Ana, Ruta Maya, Ruta de las Flores, Suchitoto o Puerta del Diablo con playa.</p><a href="#tours">Ver rutas completas</a></article>
+          <article class="guide-card"><h3>Si quieres algo único</h3><p>Oriente, Ruta de la Paz, Golfo de Fonseca o Conchagua para viajeros que buscan ir más lejos.</p><a href="#tours">Ver experiencias especiales</a></article>
+        </div>
+      </div>
+      <div class="tab-panel" id="tab-estilos" role="tabpanel" data-panel="estilos">
+        <div class="tab-photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/New%20Street%20in%20Ataco.jpg?width=1400')"></div>
+        <div class="tab-content">
+          <article class="guide-card"><h3>Naturaleza y aventura</h3><p>Volcanes, lagos, caminatas, miradores y rutas para quienes quieren estar al aire libre.</p><a href="#tours">Ver aventura</a></article>
+          <article class="guide-card"><h3>Cultura, historia y pueblos</h3><p>Sitios arqueológicos, pueblos coloniales, café, memoria histórica y arquitectura local.</p><a href="#tours">Ver cultura</a></article>
+          <article class="guide-card"><h3>Playa y gastronomía</h3><p>Surf City, atardeceres, pupusas, mariscos y experiencias relajadas cerca del océano.</p><a href="#tours">Ver playa y sabor</a></article>
+        </div>
+      </div>
+      <div class="tab-panel" id="tab-planifica" role="tabpanel" data-panel="planifica">
+        <div class="tab-photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Centro%20historico%20san%20salvador.jpg?width=1400')"></div>
+        <div class="tab-content">
+          <article class="guide-card"><h3>Antes de reservar</h3><p>Define cuántas horas tienes, nivel de actividad, si viajas con niños y si prefieres naturaleza, historia o playa.</p><a href="#contacto">Pedir recomendación</a></article>
+          <article class="guide-card"><h3>Qué llevar</h3><p>Zapatos cómodos, bloqueador, efectivo para gastos personales, botella de agua y ropa fresca.</p><a href="#detalles">Ver incluidos</a></article>
+          <article class="guide-card"><h3>Transporte y seguridad</h3><p>Las experiencias son privadas, con pick up en San Salvador y acompañamiento durante el recorrido.</p><a href="#contacto">Consultar disponibilidad</a></article>
+        </div>
+      </div>
     </section>
 
     <section id="razones">
-      <div class="section-head">
-        <p class="section-kicker">Un país pequeño con experiencias enormes</p>
-        <h2>El Salvador combina playas, volcanes, cultura y cercanía en un solo viaje.</h2>
-        <p>
-          La agencia conecta viajeros internacionales y operadores locales para ofrecer experiencias auténticas, responsables y memorables.
-        </p>
-      </div>
-
-      <div class="trust-grid">
-        <article class="mission-card">
-          <h3>Nuestra misión</h3>
-          <p>
-            Impulsar el turismo en El Salvador dando a conocer sus riquezas naturales, culturales y humanas al mundo mediante experiencias auténticas y de alta calidad.
-          </p>
-          <p>
-            La visión es ser un referente en la promoción internacional del país como destino turístico sostenible, cálido y transformador.
-          </p>
+      <div class="split">
+        <article class="story">
+          <p class="section-kicker">Un país pequeño con experiencias enormes</p>
+          <h2>Playas, volcanes, cultura y cercanía en un solo viaje.</h2>
+          <p>ExperiencES conecta viajeros internacionales con operadores locales para ofrecer experiencias auténticas, responsables y memorables en El Salvador.</p>
         </article>
-
         <div class="reason-grid">
-          <article class="reason-card">
-            <strong>Más de 300 km de costa</strong>
-            <p>Surf City, El Tunco, El Zonte y playas con atardeceres inolvidables.</p>
-          </article>
-          <article class="reason-card">
-            <strong>Más de 20 volcanes</strong>
-            <p>Caminatas, miradores y paisajes de altura como Santa Ana y Conchagua.</p>
-          </article>
-          <article class="reason-card">
-            <strong>Historia viva</strong>
-            <p>Ruta Maya, Suchitoto, Cihuatán, centros históricos y memoria cultural.</p>
-          </article>
-          <article class="reason-card">
-            <strong>Todo queda cerca</strong>
-            <p>Playas, pueblos, lagos y ciudades se pueden vivir en experiencias de un día.</p>
-          </article>
+          <article class="reason-card"><strong>Más de 300 km de costa</strong><p>Surf City, El Tunco, El Zonte y playas con atardeceres memorables.</p></article>
+          <article class="reason-card"><strong>Más de 20 volcanes</strong><p>Caminatas, miradores y paisajes de altura como Santa Ana y Conchagua.</p></article>
+          <article class="reason-card"><strong>Historia viva</strong><p>Ruta Maya, Suchitoto, Cihuatán, centro histórico y memoria cultural.</p></article>
+          <article class="reason-card"><strong>Todo queda cerca</strong><p>Playas, pueblos, lagos y ciudades se pueden vivir en experiencias de un día.</p></article>
+          <article class="reason-card"><strong>Gastronomía local</strong><p>Pupusas, café de altura, mariscos y sabores tradicionales.</p></article>
+          <article class="reason-card"><strong>Calidez humana</strong><p>Trato cercano, hospitalidad y acompañamiento durante todo el recorrido.</p></article>
         </div>
       </div>
     </section>
@@ -624,150 +573,171 @@
       <div class="section-head">
         <p class="section-kicker">Tipos de ExperiencES</p>
         <h2>Opciones flexibles para cada estilo de viaje.</h2>
-        <p>Indicamos en cada experiencia lo que incluye y lo que no se incluye para que el viajero tenga claridad desde el primer contacto.</p>
+        <p>Cada experiencia indica qué incluye y qué no incluye para que el viajero tenga claridad antes de reservar.</p>
       </div>
-
       <div class="type-grid">
-        <article class="type-card">
-          <h3>Día completo</h3>
-          <p>Traslados, alimentación según el tour y experiencia guiada para conocer destinos principales durante toda la jornada.</p>
-        </article>
-        <article class="type-card">
-          <h3>Medio día o nocturno</h3>
-          <p>Experiencias más breves para descubrir ciudad, gastronomía, miradores, cultura o playa con comodidad.</p>
-        </article>
-        <article class="type-card">
-          <h3>Premium</h3>
-          <p>Traslados aeropuerto, experiencias, alimentación y alojamiento para viajes más completos y acompañados.</p>
-        </article>
+        <article class="type-card"><h3>Día completo</h3><p>Rutas de jornada completa con traslados, experiencia guiada, entradas según destino y alimentación cuando aplique.</p></article>
+        <article class="type-card"><h3>Medio día o nocturno</h3><p>Experiencias breves para descubrir ciudad, gastronomía, miradores, cultura o playa con comodidad.</p></article>
+        <article class="type-card"><h3>Premium</h3><p>Traslados aeropuerto, experiencias privadas, alimentación y alojamiento para viajes más completos.</p></article>
       </div>
     </section>
 
     <section id="tours">
       <div class="section-head">
         <p class="section-kicker">Tours destacados</p>
-        <h2>Rutas diseñadas para ver lo mejor de El Salvador.</h2>
-        <p>Precios por persona en dólares estadounidenses. Los horarios pueden variar por clima, tráfico o solicitud del cliente.</p>
+        <h2>Rutas completas con fotos reales y contenido ordenado.</h2>
+        <p>Precios por persona en dólares estadounidenses. Horarios sujetos a clima, tráfico o solicitud del cliente.</p>
+      </div>
+      <div class="tour-tabs" role="tablist" aria-label="Filtrar tours por estilo">
+        <button class="tab-button is-active" type="button" data-filter="todos">Todos</button>
+        <button class="tab-button" type="button" data-filter="naturaleza">Naturaleza</button>
+        <button class="tab-button" type="button" data-filter="cultura">Cultura</button>
+        <button class="tab-button" type="button" data-filter="playa">Playa y sabor</button>
+        <button class="tab-button" type="button" data-filter="especiales">Especiales</button>
       </div>
 
       <div class="tours-grid">
-        <article class="tour-card">
-          <div class="tour-media" style="background-image:url('Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (2).jpeg')"></div>
+        <article class="tour-card" data-category="naturaleza">
+          <div class="tour-media" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/LakeCoatepequeElSalvador.jpg?width=1000')"></div>
           <div class="tour-body">
             <span class="tag">Naturaleza + lago</span>
             <h3>Cerro Verde, Lago de Coatepeque y Ferry</h3>
-            <p>Conecta con dos destinos asombrosos: el Parque Natural Cerro Verde y el lago volcánico de aguas cristalinas.</p>
+            <p>Parque Natural Cerro Verde, vistas al complejo volcánico y recorrido en ferry por el lago volcánico de aguas cristalinas.</p>
+            <ul class="tour-points"><li>Cerro Verde y Lago de Coatepeque</li><li>Entradas y tickets del ferry</li><li>Guía bilingüe certificado</li></ul>
             <div class="tour-meta"><div class="meta-box"><span>Desde</span><strong>$115 p/p</strong></div><div class="meta-box"><span>Horario</span><strong>8:00 a.m. - 7:30 p.m.</strong></div></div>
+            <p class="slide-proof">Contenido tomado de la diapositiva 2 del catálogo.</p>
           </div>
         </article>
 
-        <article class="tour-card">
-          <div class="tour-media" style="background-image:url('Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (3).jpeg')"></div>
+        <article class="tour-card" data-category="cultura">
+          <div class="tour-media" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Joya%20de%20Ceren%2C%20La%20Libertad.JPG?width=1000')"></div>
           <div class="tour-body">
             <span class="tag">Historia maya</span>
             <h3>Ruta Maya en El Salvador</h3>
-            <p>Joya de Cerén, San Andrés, Tazumal y Santa Ana en una travesía por el corazón de una civilización legendaria.</p>
+            <p>Travesía por Joya de Cerén, San Andrés, Tazumal y Santa Ana para caminar entre templos, plazas y vestigios arqueológicos.</p>
+            <ul class="tour-points"><li>Joya de Cerén, San Andrés y Tazumal</li><li>Entradas a sitios arqueológicos y museos</li><li>Valor agregado: réplica de Temazcal</li></ul>
             <div class="tour-meta"><div class="meta-box"><span>Desde</span><strong>$120 p/p</strong></div><div class="meta-box"><span>Horario</span><strong>8:00 a.m. - 8:00 p.m.</strong></div></div>
+            <p class="slide-proof">Cerrada los lunes según diapositiva original.</p>
           </div>
         </article>
 
-        <article class="tour-card">
-          <div class="tour-media" style="background-image:url('Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (4).jpeg')"></div>
+        <article class="tour-card" data-category="cultura">
+          <div class="tour-media" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/New%20Street%20in%20Ataco.jpg?width=1000')"></div>
           <div class="tour-body">
             <span class="tag">Café + pueblos</span>
             <h3>Ruta de las Flores</h3>
-            <p>Nahuizalco, Salcoatitán, Apaneca, Ataco, Laberinto Albania, café, artesanías y paisajes de occidente.</p>
+            <p>Pueblos de occidente, café gourmet, artesanías, Laberinto Albania, Beneficio El Carmen y calles llenas de color.</p>
+            <ul class="tour-points"><li>Nahuizalco, Salcoatitán, Apaneca y Ataco</li><li>Laberinto Albania y Beneficio El Carmen</li><li>Valor agregado: Termales de Santa Teresa</li></ul>
             <div class="tour-meta"><div class="meta-box"><span>Desde</span><strong>$115 p/p</strong></div><div class="meta-box"><span>Horario</span><strong>8:00 a.m. - 7:30 p.m.</strong></div></div>
+            <p class="slide-proof">Contenido tomado de la diapositiva Ruta de las Flores.</p>
           </div>
         </article>
 
-        <article class="tour-card">
-          <div class="tour-media" style="background-image:url('Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (6).jpeg')"></div>
+        <article class="tour-card" data-category="naturaleza">
+          <div class="tour-media" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Ilamatepec%20Lake%20wide.jpg?width=1000')"></div>
           <div class="tour-body">
             <span class="tag">Hiking</span>
             <h3>Volcán de Santa Ana y Lago de Coatepeque</h3>
-            <p>Caminata al cráter del volcán más alto del país, vistas al lago y cierre con café y sabor local.</p>
+            <p>Caminata al cráter del volcán más alto del país, vistas al Lago de Coatepeque y visita a finca cafetalera.</p>
+            <ul class="tour-points"><li>Ascenso aproximado de 1 h 40 min</li><li>Entradas a Cerro Verde y Parque Los Volcanes</li><li>Dificultad intermedia</li></ul>
             <div class="tour-meta"><div class="meta-box"><span>Desde</span><strong>$95 p/p</strong></div><div class="meta-box"><span>Horario</span><strong>7:00 a.m. - 6:30 p.m.</strong></div></div>
+            <p class="slide-proof">Contenido tomado de la diapositiva Hiking Volcán de Santa Ana.</p>
           </div>
         </article>
 
-        <article class="tour-card">
-          <div class="tour-media" style="background-image:url('Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (5).jpeg')"></div>
+        <article class="tour-card" data-category="cultura">
+          <div class="tour-media" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Iglesia%20De%20Suchitoto..JPG?width=1000')"></div>
           <div class="tour-body">
             <span class="tag">Cultura + lago</span>
             <h3>Cihuatán, Suchitoto y Lago Suchitlán</h3>
-            <p>Ruinas arqueológicas, calles coloniales, balcones floridos y travesía por el lago al atardecer.</p>
+            <p>Ruinas arqueológicas, calles coloniales, balcones floridos y travesía en lancha al atardecer por Lago Suchitlán.</p>
+            <ul class="tour-points"><li>Ruinas de Cihuatán y Suchitoto</li><li>Lago Suchitlán e Isla El Embalse</li><li>Valor agregado: almuerzo en Casa 1800</li></ul>
             <div class="tour-meta"><div class="meta-box"><span>Desde</span><strong>$125 p/p</strong></div><div class="meta-box"><span>Horario</span><strong>8:00 a.m. - 7:30 p.m.</strong></div></div>
+            <p class="slide-proof">Contenido tomado de la diapositiva Cihuatán, Suchitoto y Lago Suchitlán.</p>
           </div>
         </article>
 
-        <article class="tour-card">
-          <div class="tour-media" style="background-image:url('Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (7).jpeg')"></div>
+        <article class="tour-card" data-category="cultura naturaleza">
+          <div class="tour-media" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Boquer%C3%B3n%20crater.jpg?width=1000')"></div>
           <div class="tour-body">
             <span class="tag">Ciudad + volcán</span>
             <h3>City Tour, Boquerón y Volcán de San Salvador</h3>
-            <p>Naturaleza volcánica, miradores, Museo Militar, Centro Histórico, Catedral, Teatro Nacional e Iglesia El Rosario.</p>
+            <p>Volcán de San Salvador, El Boquerón, miradores, Museo Militar y caminata por el Centro Histórico.</p>
+            <ul class="tour-points"><li>Parque Nacional El Boquerón</li><li>Catedral, Teatro Nacional e Iglesia El Rosario</li><li>Valor agregado: deslizadero de colores</li></ul>
             <div class="tour-meta"><div class="meta-box"><span>Desde</span><strong>$85 p/p</strong></div><div class="meta-box"><span>Horario</span><strong>8:00 a.m. - 6:00 p.m.</strong></div></div>
+            <p class="slide-proof">Contenido tomado de la diapositiva City Tour.</p>
           </div>
         </article>
 
-        <article class="tour-card">
-          <div class="tour-media" style="background-image:url('Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (8).jpeg')"></div>
+        <article class="tour-card" data-category="playa cultura">
+          <div class="tour-media" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/PUERTA%20DEL%20DIABLO%2C%20EL%20SALVADOR.jpg?width=1000')"></div>
           <div class="tour-body">
             <span class="tag">Gastronomía + playa</span>
             <h3>Puerta del Diablo, Pupusas y Surf City</h3>
-            <p>Miradores, leyendas, taller de pupusas y cierre frente al mar en Playa El Zonte.</p>
+            <p>Miradores de Panchimalco, taller de pupusas y cierre frente al mar en Playa El Zonte dentro de Surf City.</p>
+            <ul class="tour-points"><li>Entrada a Puerta del Diablo</li><li>Taller y degustación de pupusas</li><li>Atardecer en Playa El Zonte</li></ul>
             <div class="tour-meta"><div class="meta-box"><span>Desde</span><strong>$105 p/p</strong></div><div class="meta-box"><span>Horario</span><strong>9:00 a.m. - 7:00 p.m.</strong></div></div>
+            <p class="slide-proof">Contenido tomado de la diapositiva Puerta del Diablo.</p>
           </div>
         </article>
 
-        <article class="tour-card">
-          <div class="tour-media" style="background-image:url('Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (9).jpeg')"></div>
+        <article class="tour-card" data-category="cultura">
+          <div class="tour-media" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Centro%20historico%20san%20salvador.jpg?width=1000')"></div>
           <div class="tour-body">
             <span class="tag">Nocturno</span>
             <h3>Tour Nocturno en San Salvador</h3>
-            <p>Plazas, miradores, Biblioteca Nacional, Iglesia El Rosario y tiempo libre para saborear gastronomía salvadoreña.</p>
+            <p>Plazas, miradores, Biblioteca Nacional, Iglesia El Rosario, Teatro Nacional y gastronomía salvadoreña.</p>
+            <ul class="tour-points"><li>Plaza Salvador del Mundo y mirador El Águila</li><li>Centro Histórico e Iglesia El Rosario</li><li>Valor agregado: Puerta del Diablo</li></ul>
             <div class="tour-meta"><div class="meta-box"><span>Desde</span><strong>$50 p/p</strong></div><div class="meta-box"><span>Horario</span><strong>6:00 p.m. - 10:00 p.m.</strong></div></div>
+            <p class="slide-proof">Tour privado desde 1 persona según diapositiva.</p>
           </div>
         </article>
 
-        <article class="tour-card">
-          <div class="tour-media" style="background-image:url('Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (11).jpeg')"></div>
+        <article class="tour-card" data-category="especiales naturaleza">
+          <div class="tour-media" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Lagunad%20alegria.jpg?width=1000')"></div>
           <div class="tour-body">
             <span class="tag">Oriente + café</span>
             <h3>Alegría, Laguna de Alegría y Berlín</h3>
-            <p>La Esmeralda de América, miradores panorámicos, fincas cafeteras y centro histórico de Berlín.</p>
+            <p>La Esmeralda de América, fincas cafeteras, Mirador de Cristal y centro histórico de Berlín entre montañas.</p>
+            <ul class="tour-points"><li>Laguna de Alegría y Finca Rauda</li><li>Mirador de las 100 gradas</li><li>Finca La Providencia o San Rafael</li></ul>
             <div class="tour-meta"><div class="meta-box"><span>Desde</span><strong>$125 p/p</strong></div><div class="meta-box"><span>Horario</span><strong>7:00 a.m. - 7:00 p.m.</strong></div></div>
+            <p class="slide-proof">Contenido tomado de la diapositiva Zona Oriente.</p>
           </div>
         </article>
 
-        <article class="tour-card">
-          <div class="tour-media" style="background-image:url('Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (10).jpeg')"></div>
+        <article class="tour-card" data-category="especiales cultura naturaleza">
+          <div class="tour-media" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Cruz%20Piedra.jpg?width=1000')"></div>
           <div class="tour-body">
             <span class="tag">Memoria + naturaleza</span>
             <h3>Ruta de la Paz</h3>
-            <p>Perquín, Museo de la Revolución, Cerro Perquín, El Mozote y Río Sapo en Morazán.</p>
+            <p>Perquín, Museo de la Revolución, Cerro Perquín, El Mozote y Río Sapo en una ruta de historia y naturaleza.</p>
+            <ul class="tour-points"><li>Museo de la Revolución y guía en museo</li><li>Monumento a las Víctimas en El Mozote</li><li>Río Sapo en Morazán</li></ul>
             <div class="tour-meta"><div class="meta-box"><span>Desde</span><strong>$135 p/p</strong></div><div class="meta-box"><span>Horario</span><strong>5:00 a.m. - 7:00 p.m.</strong></div></div>
+            <p class="slide-proof">Contenido tomado de la diapositiva Ruta de la Paz.</p>
           </div>
         </article>
 
-        <article class="tour-card">
-          <div class="tour-media" style="background-image:url('Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (12).jpeg')"></div>
+        <article class="tour-card" data-category="especiales playa">
+          <div class="tour-media" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/GOF%20Photo.jpg?width=1000')"></div>
           <div class="tour-body">
             <span class="tag">Golfo de Fonseca</span>
             <h3>Islas del Golfo de Fonseca</h3>
-            <p>Navegación desde La Unión, Isla Zacatillo, Playona, vistas a Conchaguita, Isla Conejo y Chuchito.</p>
+            <p>Navegación desde La Unión hacia Zacatillo, Playona, Conchaguita, Isla Conejo y Chuchito.</p>
+            <ul class="tour-points"><li>Lancha turística con techo y chalecos</li><li>Hielera con bebidas hidratantes</li><li>Capitán, ayudante de lancha y guía bilingüe</li></ul>
             <div class="tour-meta"><div class="meta-box"><span>Desde</span><strong>$175 p/p</strong></div><div class="meta-box"><span>Horario</span><strong>5:30 a.m. - 7:30 p.m.</strong></div></div>
+            <p class="slide-proof">Contenido tomado de la diapositiva Islas del Golfo.</p>
           </div>
         </article>
 
-        <article class="tour-card">
-          <div class="tour-media" style="background-image:url('Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (13).jpeg')"></div>
+        <article class="tour-card" data-category="especiales naturaleza">
+          <div class="tour-media" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Conchagua%2C%20Golfo%20de%20Fonseca.jpg?width=1000')"></div>
           <div class="tour-body">
             <span class="tag">4x4 + mirador</span>
             <h3>Volcán de Conchagua y Espíritu de la Montaña</h3>
-            <p>Ascenso en 4x4 hacia uno de los miradores más impactantes del Golfo de Fonseca.</p>
+            <p>Ascenso en 4x4 al mirador Espíritu de la Montaña con vistas al Golfo de Fonseca y territorios vecinos.</p>
+            <ul class="tour-points"><li>Transporte cómodo con A/C</li><li>Vehículo 4x4 y entrada al mirador</li><li>Tiempo para fotos y exploración</li></ul>
             <div class="tour-meta"><div class="meta-box"><span>Desde</span><strong>$150 p/p</strong></div><div class="meta-box"><span>Horario</span><strong>5:00 a.m. - 8:00 p.m.</strong></div></div>
+            <p class="slide-proof">Contenido tomado de la diapositiva Conchagua.</p>
           </div>
         </article>
       </div>
@@ -775,36 +745,34 @@
 
     <section class="gallery" aria-labelledby="galeria-title">
       <div class="section-head">
-        <p class="section-kicker">Galería</p>
-        <h2 id="galeria-title">Una muestra visual de las ExperiencES.</h2>
-        <p>Imágenes del material oficial de la agencia para comunicar rutas, destinos, transporte y propuesta turística.</p>
+        <p class="section-kicker">Propuesta de galería</p>
+        <h2 id="galeria-title">Fotos que muestran destino, no flyers recortados.</h2>
+        <p>La galería mezcla paisajes, ciudad, playa y cultura para reforzar la percepción de variedad del país.</p>
       </div>
-      <div class="photo-grid">
-        <img src="Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM.jpeg" alt="ExperiencES: playa, volcán, gastronomía y transporte" />
-        <img src="Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (2).jpeg" alt="Experiencia Cerro Verde y Lago de Coatepeque" />
-        <img src="Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (4).jpeg" alt="Ruta de las Flores y pueblos de occidente" />
-        <img src="Fotos/WhatsApp Image 2026-05-18 at 5.11.43 PM (12).jpeg" alt="Islas del Golfo de Fonseca" />
+      <div class="gallery-grid">
+        <div class="gallery-tile" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Ilamatepec%20Lake%20wide.jpg?width=1200')"><span>Volcanes y aventura</span></div>
+        <div class="gallery-tile" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Joya%20de%20Ceren%2C%20La%20Libertad.JPG?width=1200')"><span>Historia maya</span></div>
+        <div class="gallery-tile" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/LakeCoatepequeElSalvador.jpg?width=1200')"><span>Lagos volcánicos</span></div>
+        <div class="gallery-tile" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Iglesia%20De%20Suchitoto..JPG?width=1200')"><span>Pueblos coloniales</span></div>
+        <div class="gallery-tile" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Conchagua%2C%20Golfo%20de%20Fonseca.jpg?width=1200')"><span>Golfo de Fonseca</span></div>
       </div>
     </section>
 
-    <section>
-      <div class="details">
+    <section id="detalles">
+      <div class="details-grid">
         <article class="included">
           <h3>Qué incluyen las experiencias privadas</h3>
-          <ul>
+          <ul class="check-list">
             <li>Pick up en alojamiento y retorno al mismo lugar en San Salvador.</li>
-            <li>Transporte confortable con aire acondicionado.</li>
-            <li>Guía turístico bilingüe certificado.</li>
+            <li>Transporte confortable con aire acondicionado, seguro y unidades recientes.</li>
+            <li>Guía turístico certificado con dominio de español e inglés.</li>
             <li>Entradas, tickets o traslados internos según cada experiencia.</li>
             <li>Valores agregados disponibles con costo adicional según destino.</li>
           </ul>
         </article>
-
         <article class="included">
           <h3>Política de cancelación y pagos</h3>
-          <p>
-            Cancelación sin gastos hasta 72 horas antes de la actividad. Con más de 48 horas de anticipación se reembolsa el 50%. Con menos tiempo, llegada tarde o inasistencia no se ofrece reembolso.
-          </p>
+          <p>Cancelación sin gastos hasta 72 horas antes de la actividad. Con más de 48 horas de anticipación se reembolsa el 50%. Con menos tiempo, llegada tarde o inasistencia no se ofrece reembolso.</p>
           <p>Forma de pago: transferencia bancaria. Pick up fuera de San Salvador o Airbnb puede tener costo adicional.</p>
         </article>
       </div>
@@ -814,12 +782,10 @@
       <div class="contact-card">
         <p class="section-kicker">Reserva tu próxima experiencia</p>
         <h2>Hablemos de la ruta que quieres vivir.</h2>
-        <p>
-          Escribe por WhatsApp para consultar disponibilidad, adaptar el itinerario a tu grupo y recibir orientación sobre el tour ideal.
-        </p>
+        <p>Escribe por WhatsApp para consultar disponibilidad, adaptar el itinerario a tu grupo y recibir orientación sobre el tour ideal.</p>
         <div class="contact-actions">
           <a class="btn btn-primary" href="https://wa.me/50370207434" target="_blank" rel="noopener">WhatsApp +503 7020-7434</a>
-          <a class="btn btn-secondary" href="mailto:experienceselsalvador@outlook.com">experienceselsalvador@outlook.com</a>
+          <a class="btn btn-secondary" href="mailto:experienceselsalvador_r1@outlook.com">experienceselsalvador_r1@outlook.com</a>
         </div>
       </div>
     </section>
@@ -828,6 +794,55 @@
   <footer>
     <p><strong>ExperiencES</strong> | Descubre, vive, conecta</p>
     <p>Tours privados y experiencias turísticas en El Salvador</p>
+    <details class="image-credits">
+      <summary>Créditos de fotografías de destino</summary>
+      <p>
+        Fotografías de lugares reales desde Wikimedia Commons:
+        <a href="https://commons.wikimedia.org/wiki/Category:Coatepeque_Lake">Lago de Coatepeque</a>,
+        <a href="https://commons.wikimedia.org/wiki/Category:Playa_El_Tunco">Playa El Tunco</a>,
+        <a href="https://commons.wikimedia.org/wiki/Category:Santa_Ana_Volcano">Volcán de Santa Ana</a>,
+        <a href="https://commons.wikimedia.org/wiki/Category:Tazumal">Tazumal</a>,
+        <a href="https://commons.wikimedia.org/wiki/Category:Concepci%C3%B3n_de_Ataco">Concepción de Ataco</a>,
+        <a href="https://commons.wikimedia.org/wiki/Category:Suchitoto">Suchitoto</a>,
+        <a href="https://commons.wikimedia.org/wiki/Category:Boqueron_Crater">El Boquerón</a>,
+        <a href="https://commons.wikimedia.org/wiki/Category:Puerta_del_Diablo">Puerta del Diablo</a>,
+        <a href="https://commons.wikimedia.org/wiki/Category:Night_in_San_Salvador">San Salvador nocturno</a>,
+        <a href="https://commons.wikimedia.org/wiki/Category:Views_of_San_Salvador">vistas de San Salvador</a>,
+        <a href="https://commons.wikimedia.org/wiki/Category:Laguna_de_Alegr%C3%ADa">Laguna de Alegría</a>,
+        <a href="https://commons.wikimedia.org/wiki/Category:El_Mozote">El Mozote</a> y
+        <a href="https://commons.wikimedia.org/wiki/Category:Conchagua_(volcano)">Conchagua / Golfo de Fonseca</a>.
+      </p>
+    </details>
   </footer>
+  <script>
+    const guideButtons = document.querySelectorAll("[data-tab]");
+    const guidePanels = document.querySelectorAll("[data-panel]");
+    guideButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const target = button.dataset.tab;
+        guideButtons.forEach((item) => {
+          const isActive = item === button;
+          item.classList.toggle("is-active", isActive);
+          item.setAttribute("aria-selected", String(isActive));
+        });
+        guidePanels.forEach((panel) => {
+          panel.classList.toggle("is-active", panel.dataset.panel === target);
+        });
+      });
+    });
+
+    const filterButtons = document.querySelectorAll("[data-filter]");
+    const tourCards = document.querySelectorAll(".tour-card[data-category]");
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        filterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+        tourCards.forEach((card) => {
+          const categories = card.dataset.category.split(" ");
+          card.classList.toggle("is-hidden", filter !== "todos" && !categories.includes(filter));
+        });
+      });
+    });
+  </script>
 </body>
 </html>
